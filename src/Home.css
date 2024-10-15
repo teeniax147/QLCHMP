@@ -1,0 +1,358 @@
+/* Đảm bảo header luôn nằm ở đầu trang và cố định */
+.home {
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  position: relative;
+  top: -150px;
+  left: 0;
+  z-index: 100;
+  height: 100px;
+}
+
+/* Tạo khoảng cách với nội dung bên dưới để tránh header chèn vào */
+body {
+  padding-top: 110px;
+  /* Đảm bảo không có khoảng trắng ở hai bên */
+
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Ngăn ngừa tràn ngang */
+}
+
+
+/* Phần trên cùng chứa thông tin freeship */
+.header-top {
+  display: flex;
+  justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+  align-items: center; /* Căn giữa nội dung theo chiều dọc */
+  padding: 5px 0;
+  background-color: #89c289;
+  color: white;
+  font-size: 14px;
+}
+
+.header-top span {
+  margin: 0 10px; /* Tạo khoảng cách giữa các đoạn văn bản */
+  position: relative;
+  display: flex; /* Sử dụng flexbox để căn chỉnh dấu chấm và văn bản */
+  align-items: center; /* Căn giữa dấu chấm và văn bản theo chiều dọc */
+}
+
+.header-top span::before {
+  content: "•";
+  margin-right: 18px; /* Khoảng cách giữa dấu chấm và văn bản */
+  vertical-align: middle; /* Căn dấu chấm chính giữa */
+}
+
+.header-top span:first-child::before {
+  content: ""; /* Loại bỏ dấu chấm trước đoạn đầu tiên */
+}
+
+.header-top span:last-child::before {
+  content: "•"; /* Giữ dấu chấm trước đoạn cuối */
+}
+
+/* Phần chính chứa logo, thanh tìm kiếm và biểu tượng */
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  background-color: white;
+  max-width: 1200px; /* Giới hạn chiều rộng của header */
+  margin: 0 auto; /* Căn giữa phần header */
+  height: 80px;
+  box-sizing: border-box;
+}
+.logo {
+  margin-right: -5px; /* Khoảng cách giữa logo và thanh tìm kiếm */
+  margin-left: 22px; /* Lùi logo ra xa một chút về bên trái */
+}
+
+.logo img {
+  height: 60px; /* Giữ nguyên chiều cao logo */
+  display: block;
+}
+
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f2f2f2; /* Màu nền sáng */
+  border-radius: 50px; /* Tăng độ bo tròn để tạo hiệu ứng mềm mại hơn */
+  padding: 2px 15px; /* Giảm padding để phần rộng thu nhỏ */
+  max-width: 350px; /* Giảm chiều ngang để thanh tìm kiếm dài hơn nhưng không quá to */
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #ddd; /* Đường viền nhẹ */
+  height: 30px; /* Thu nhỏ chiều cao của thanh */
+}
+
+.search-bar input {
+  border: none;
+  background-color: transparent;
+  padding: 5px 10px;
+  flex: 1;
+  font-size: 14px;
+  outline: none;
+  height: 100%; /* Chiều cao của input khớp với thanh tìm kiếm */
+}
+
+.search-bar button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar button img {
+  height: 16px; /* Kích thước nhỏ gọn cho biểu tượng kính lúp */
+  width: 16px;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Khoảng cách hợp lý giữa các icon */
+}
+
+.icon img {
+  height: 20px; /* Cố định chiều cao cho tất cả icon */
+  width: 20px; /* Cố định chiều rộng cho tất cả icon */
+  margin-right: 5px; /* Giữ khoảng cách giữa icon và chữ */
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  cursor: pointer;
+  color: #333;
+}
+
+.icon-divider {
+  border-left: 1px solid #333;
+  height: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.nav {
+  background-color: #e6f7e6;
+  padding: 2px 0; /* Giảm padding để làm thanh điều hướng hẹp hơn về chiều cao */
+  max-width: 80%; /* Căn chỉnh chiều ngang như bạn yêu cầu */
+  margin: 0 auto; /* Căn giữa thanh điều hướng */
+  border-radius: 30px; /* Giữ lại độ bo tròn mềm mại */
+  text-align: center;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around; /* Căn đều các mục */
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Đảm bảo font chữ Inter cho toàn trang */
+body {
+  font-family: 'Inter', sans-serif;
+  padding-top: 110px;
+}
+
+/* Thanh điều hướng */
+.nav li {
+  font-size: 14px;
+  cursor: pointer;
+  color: #5a9a5a;
+  padding: 5px 10px;
+  font-weight: bold; /* Làm chữ in đậm */
+  font-family: 'Inter', sans-serif; /* Áp dụng font Inter cho thanh điều hướng */
+}
+
+.nav li:hover {
+  color: #3e7e3e;
+  font-weight: bold;
+}
+
+/* Footer Styling */
+/* Khoảng cách giữa phần nội dung chính và footer */
+main {
+  margin-bottom: 50px; /* Tạo khoảng cách giữa nội dung và footer */
+}
+
+/* Khoảng cách giữa footer và nội dung */
+.footer {
+  background-color: #e6f7e6;
+  color: #333;
+  padding: 40px 20px;
+  margin-top: 50px; /* Tạo khoảng cách giữa footer và nội dung chính */
+}
+
+/* Đảm bảo padding-top lớn hơn để tránh header chèn vào nội dung */
+body {
+  font-family: 'Inter', sans-serif;
+  padding-top: 150px; /* Tăng khoảng cách giữa header và nội dung chính */
+}
+
+/* Điều chỉnh khoảng cách các phần bên trong footer */
+/* Phần chứa nhận bản tin */
+.newsletter-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #66bb6a, #43a047); /* Màu gradient  */
+  border-radius: 0; /* Loại bỏ bo góc của phần màu xanh đậm */
+  padding: 8px 40px 8px 0px; /* Giữ padding để căn phần nội dung */
+  width: 100%; /* Chiều ngang bằng trang web */
+  margin: 0 auto; /* Đảm bảo căn giữa và sát phần trên */
+  position: relative; /* Đảm bảo phần này nằm sát phần trên */
+  top: -40px; /* Kéo phần màu xanh đậm lên để sát phần xanh nhạt */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tạo hiệu ứng bóng nhẹ */
+  margin-left: -20px;
+  
+}
+
+.newsletter-content {
+  color: white;
+  margin-left: 80px;
+  margin-top: -8px;
+}
+
+.newsletter-content h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.newsletter-content p {
+  margin: 1px 0;
+  font-size: 14px;
+  margin-top: -15px;
+}
+
+.newsletter-subscribe {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 0px;
+
+}
+
+.newsletter-subscribe input {
+  padding: 8px;
+  border-radius: 20px 0 0 20px; /* Chỉ bo góc phần input */
+  border: none;
+  outline: none;
+  width: 250px;
+}
+
+.newsletter-subscribe button {
+  padding: 8px 20px;
+  border-radius: 0 20px 20px 0; /* Bo góc cho phần nút */
+  border: none;
+  background-color: #2e7d32;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  
+}
+
+.newsletter-subscribe button:hover {
+  background-color: #1b5e20;
+}
+
+
+
+/* Đảm bảo khoảng cách giữa các phần */
+.body-content {
+  padding-top: 50px; /* Tạo khoảng trống giữa header và phần nội dung */
+  padding-bottom: 50px; /* Tạo khoảng trống giữa nội dung và footer */
+}
+
+
+
+.footer-middle {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 200px 0 400px;
+  
+  margin-left:-330px;
+ 
+}
+
+.footer-logo img {
+  height: 80px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-section h4 {
+  font-size: 18px;
+  color: #5a9a5a;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+  color: #5a9a5a;
+}
+
+.footer-social {
+  text-align: center;
+}
+
+.footer-social ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+ 
+}
+
+.social-icons li, .payment-icons li {
+  margin: 0 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-bottom p {
+  font-size: 12px;
+  color: #999;
+}
+
+.certification-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.certification-icons img {
+  margin: 0 10px;
+  height: 40px;
+}
+

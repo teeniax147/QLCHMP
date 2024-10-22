@@ -1,0 +1,123 @@
+.carousel-container {
+  width: 100%;
+  max-width: 1150px;
+  margin: -60px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  position: relative;
+  display: flex;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.5s ease;
+}
+
+.carousel-next {
+  position: absolute;
+  top: 0;
+  right: -25%; /* Đặt ra ngoài slide hiện tại */
+  width: 20%; /* Kích thước nhỏ hơn của hình ảnh mờ */
+  height: 100%;
+  opacity: 0.5; /* Làm mờ hình ảnh */
+  z-index: 1; /* Đặt dưới slide hiện tại */
+  pointer-events: none; /* Không tương tác với hình ảnh mờ */
+}
+
+.carousel-slide img {
+  position: relative;
+  z-index: 2;
+}
+
+.carousel-dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 7px 5px;
+  background-color: #c1c1c19a; /* Màu mặc định cho nút */
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi màu */
+}
+
+.dot.active {
+  background-color: #717171; /* Màu đậm hơn khi active */
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-1000%);
+  background-color: rgba(255, 255, 255, 0.8); /* Giữ màu trắng ban đầu */
+  color: black; /* Màu mũi tên */
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%; /* Hình tròn */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Hiệu ứng đổ bóng nhẹ */
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none; /* Loại bỏ viền khi bấm vào */
+  transition: background-color 0.3s ease; /* Hiệu ứng chuyển mượt */
+}
+
+.carousel-arrow:focus, .carousel-arrow:active {
+  background-color: rgba(255, 255, 255, 0.8); /* Giữ nguyên màu trắng khi bấm vào */
+  color: black; /* Giữ màu mũi tên khi bấm vào */
+  outline: none; /* Loại bỏ viền focus hoặc viền active */
+}
+
+.carousel-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.5); /* Chỉ thay đổi màu khi hover */
+  color: white;
+}
+
+.left-arrow {
+  left: 15px;
+}
+
+.right-arrow {
+  right: 15px;
+}
+/* Cấu trúc hiện có của bạn ở trên */
+
+.brand-section {
+  display: flex;
+  justify-content: space-between; /* Căn đều các thương hiệu */
+  margin: 45px auto; /* Lùi xuống 40px */
+  max-width: 1000px; /* Chiều rộng tối đa */
+  padding: 20px 0; /* Thêm khoảng trống ở trên và dưới */
+}
+
+.brand-link {
+  display: block;
+  width: 200px; /* Kích thước hình ảnh */
+  transition: transform 0.3s ease; /* Hiệu ứng khi hover */
+}
+
+.brand-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Bo góc nhẹ cho hình ảnh */
+  border: 2px solid white; /* Bo viền trắng cho hình ảnh */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
+}
+
+.brand-link:hover {
+  transform: scale(1.05); /* Phóng to khi hover */
+}

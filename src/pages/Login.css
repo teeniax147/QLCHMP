@@ -2,7 +2,8 @@
 .login-page {
     font-family: 'Inter', sans-serif;
     background-color: #d3f8d3; /* Màu nền xanh lá nhạt */
-    margin: 0;
+    margin-top: -300px;
+  
     padding: 0;
     height: 100vh; /* Chiều cao bằng với chiều cao của cửa sổ (viewport) */
     display: flex;

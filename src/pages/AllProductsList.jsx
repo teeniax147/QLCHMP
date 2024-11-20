@@ -177,15 +177,18 @@ const AllProductsList = () => {
   
   </div>
 
+          <div style={{display: "flex", flexDirection: "row", alignItems: "center", gap: "10px"}}>
           <label>
             Đang khuyến mãi:
-            <input
+          </label>
+          <input
+          style={{width: "auto"}}
               type="checkbox"
               name="isOnSale"
               checked={filters.isOnSale}
               onChange={handleFilterChange}
             />
-          </label>
+          </div>
         </div>
 
         <div className="sort-section-all">

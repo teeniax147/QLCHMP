@@ -35,6 +35,10 @@
     justify-content: center;
 }
 
+.logo{
+    margin: 0px;
+}
+
 .logo img {
     width: 110px;
     height: auto;

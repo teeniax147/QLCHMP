@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Layout from './Layout'; 
-import Home from './pages/Home'; 
+import Layout from './Layout';
+import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import CouponList from './pages/CouponList';
@@ -10,8 +10,8 @@ import OtpVerification from './pages/OtpVerification';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
 import BeautyBlog from './pages/BeautyBlog';
-import ProductList from './pages/ProductList'; 
-import AllProductsList from './pages/AllProductsList'; 
+import ProductList from './pages/ProductList';
+import AllProductsList from './pages/AllProductsList';
 import BrandProducts from './pages/BrandProducts';
 import CartPage from "./pages/CartPage";
 import UserProfile from './pages/UserProfile';
@@ -20,7 +20,7 @@ import CartPreviewPage from './pages/CartPreviewPage';
 import OrderSuccessPage from './pages/OrderSuccessPage';
 import AdminLayout from './AdminLayout';
 import HomeAdmin from './pages/HomeAdmin';
-import StaffLayout from './StaffLayout'; 
+import StaffLayout from './StaffLayout';
 import HomeStaff from './pages/HomeStaff';
 import ProductManager from './pages/ProductManager';
 import CategoryManagement from './pages/CategoryManagement';
@@ -35,32 +35,35 @@ import BlogManager from './pages/BlogManager';
 import CreateUser from "./pages/CreateUser";
 import CustomerList from "./pages/CustomerList";
 function App() {
-  const isLoggedIn = !!localStorage.getItem('token'); // Kiểm tra token đăng nhập
-  const roles = JSON.parse(localStorage.getItem('roles') || '[]');
 
-    // Đảm bảo rằng `roles` là một mảng
-    const userRoles = Array.isArray(roles) ? roles : [];
 
-    const isAdmin = userRoles.includes('Admin');
-    const isStaff = userRoles.includes('Staff');
-    const isCustomer = userRoles.includes('Customer');
-     // Điều hướng mặc định theo quyền
-     const defaultRoute = () => {
-      if (isAdmin) {
-          return <Navigate to="/admin" />;
-      } else if (isStaff) {
-          return <Navigate to="/staff" />;
-      } else if (isCustomer) {
-          return <Navigate to="/" />;
-      } else {
-          return <Navigate to="/login" />;
-      }
-  };
+
+    // const isLoggedIn = !!localStorage.getItem('token'); // Kiểm tra token đăng nhập
+    // const roles = JSON.parse(localStorage.getItem('roles') || '[]');
+
+    // // Đảm bảo rằng `roles` là một mảng
+    // const userRoles = Array.isArray(roles) ? roles : [];
+
+    // const isAdmin = userRoles.includes('Admin');
+    // const isStaff = userRoles.includes('Staff');
+    // const isCustomer = userRoles.includes('Customer');
+    // // Điều hướng mặc định theo quyền
+    // const defaultRoute = () => {
+    //     if (isAdmin) {
+    //         return <Navigate to="/admin" />;
+    //     } else if (isStaff) {
+    //         return <Navigate to="/staff" />;
+    //     } else if (isCustomer) {
+    //         return <Navigate to="/" />;
+    //     } else {
+    //         return <Navigate to="/login" />;
+    //     }
+    // };
     return (
         <Router>
             <Routes>
-              {/* Điều hướng mặc định dựa trên quyền */}
-              <Route path="/" element={defaultRoute()} />
+                {/* Điều hướng mặc định dựa trên quyền */}
+                {/* <Route path="/" element={defaultRoute()} /> */}
                 {/* Layout chính */}
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
@@ -82,32 +85,26 @@ function App() {
                 {/* Route cho admin */}
                 <Route
                     path="/admin"
-                    element={
-                        isLoggedIn && isAdmin ? (
-                            <AdminLayout />
-                        ) : (
-                            <Navigate to="/login" />
-                        )
-                    }
+                    element={<AdminLayout />}
                 >
                     <Route index element={<HomeAdmin />} />
                     <Route path="users" element={<div>Quản lí người dùng</div>} />
-                 
+
                     <Route path="orders" element={<OrderManager />} />
                     <Route path="products" element={<ProductManager />} />
                     <Route path="categories" element={<CategoryManagement />} />
                     <Route path="add-category" element={<AddCategory />} />
                     <Route path="brands" element={<BrandManagement />} />
-                    <Route path="coupons" element={      <CouponsManagement  />} />
-                    <Route path="inventory" element={      <InventoryManagement  />} />
-                    <Route path="revenue-report" element={<RevenueReport />} /> 
+                    <Route path="coupons" element={<CouponsManagement />} />
+                    <Route path="inventory" element={<InventoryManagement />} />
+                    <Route path="revenue-report" element={<RevenueReport />} />
                     <Route path="blogs" element={<BlogManager />} />
                     <Route path="create-user" element={<CreateUser />} />
                     <Route path="customers" element={<CustomerList />} />
                 </Route>
 
                 {/* Route cho staff */}
-                <Route
+                {/* <Route
                     path="/staff"
                     element={
                         isLoggedIn && isStaff ? (
@@ -120,11 +117,11 @@ function App() {
                     <Route index element={<HomeStaff />} />
                     <Route path="tasks" element={<div>Công việc của tôi</div>} />
                     <Route path="customers" element={<div>Khách hàng</div>} />
-                  
-                </Route>
+
+                </Route> */}
 
                 {/* Điều hướng mặc định cho customer */}
-                
+
 
                 {/* Các route khác */}
                 <Route path="/login" element={<Login />} />

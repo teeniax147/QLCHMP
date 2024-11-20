@@ -33,6 +33,18 @@ align-items: center; /* Căn giữa dấu chấm và văn bản theo chiều d�
   margin-left: 8px;
 }
 
+.logout-button:hover{
+  background: transparent ;
+}
+
+.logout-button:focus{
+  outline: none !important; 
+}
+
+.logout-button:focus-visible{
+  outline: none !important; 
+}
+
 .header-top span::before {
 content: "•";
 margin-right: 18px; /* Khoảng cách giữa dấu chấm và văn bản */

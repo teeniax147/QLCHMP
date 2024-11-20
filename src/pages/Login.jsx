@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom'; // Đảm bảo Link được import
 import axios from 'axios';
 import './Login.css';
@@ -6,67 +6,67 @@ import './Login.css';
 const Login = () => {
   const [emailOrUsername, setEmailOrUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-
   const navigate = useNavigate();
+
+  const loginAPI = async (user, pass) => {
+    try {
+      const res = await axios.post('https://localhost:5001/api/Users/login', {
+        EmailOrUsername: user,
+        Password: pass,
+      });
+      return res
+    } catch (error) {
+      console.log(error);
+
+    }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError(null);
 
-    try {
-        const response = await axios.post('https://localhost:5001/api/Users/login', {
-            EmailOrUsername: emailOrUsername,
-            Password: password,
-        });
-        const {userName, roles } = response.data;
-        // Truy xuất token từ phản hồi
-        const token = response.data.token?.Result; // Lấy chuỗi token từ thuộc tính Result
-        // In ra để kiểm tra giá trị của roles
-        console.log("Token:", token);
-        console.log("UserName:", userName);
-        console.log("Roles:", roles);
+    const res = await loginAPI(emailOrUsername, password)
 
-        // Kiểm tra nếu roles có thuộc tính $values và sử dụng nó nếu có
-        const roleArray = Array.isArray(roles) ? roles : roles?.$values || [];
+    switch (res.status) {
+      case 200:
+        const { $values } = res.data.roles;
+        const token = res.data.token?.Result; // Lấy chuỗi token từ thuộc tính Resul
 
-        // Kiểm tra roleArray sau khi truy xuất
-        console.log("RoleArray (sau khi xử lý):", roleArray);
-
-        // Nếu roleArray không phải là mảng hợp lệ hoặc không có vai trò, báo lỗi
-        if (!Array.isArray(roleArray) || roleArray.length === 0) {
-            throw new Error('Vai trò không xác định (roles không hợp lệ hoặc không có dữ liệu).');
+        if (!token) {
+          throw new Error('Không nhận được token hợp lệ từ server.');
         }
 
-        if (!token || typeof token !== 'string') {
-            throw new Error('Không nhận được token hợp lệ từ server.');
+        switch ($values[0]) {
+          case "Admin":
+            navigate("/admin")
+            break;
+          case "Staff":
+            navigate("/staff")
+            break;
+          case "Customer":
+            navigate("/")
+            break;
+          default:
+            break;
         }
 
-        // Lưu token và tên người dùng nếu đăng nhập thành công
         localStorage.setItem('token', token);
-        localStorage.setItem('userName', response.data.userName); // Lưu tên người dùng
-        localStorage.setItem('roles', JSON.stringify(roleArray)); // Lưu roles dưới dạng chuỗi JSON hoặc mảng rỗng
-        
-        // Điều hướng dựa trên vai trò
-        if (roleArray.includes('Admin')) {
-          navigate('/admin');
-      } else if (roleArray.includes('Staff')) {
-          navigate('/staff');
-      } else if (roleArray.includes('Customer')) {
-          navigate('/');
-      } else {
-          throw new Error('Vai trò không xác định.');
-      }
-
-    } catch (err) {
-        console.error("Lỗi đăng nhập:", err);
-        setError(err.response?.data?.message || err.message || 'Đăng nhập thất bại. Vui lòng thử lại.');
-    } finally {
-        setLoading(false);
+        localStorage.setItem('userName', res.data.userName);
+        localStorage.setItem('roles', JSON.stringify($values[0]));
+        break;
+      default:
+        break;
     }
-};
+  };
+
+  useEffect(() => {
+    localStorage.removeItem('roles')
+    localStorage.removeItem('token')
+    localStorage.removeItem('userName')
+  }, [])
+
   return (
     <div className="login-wrapper">
       <div className="login-page">
@@ -100,7 +100,7 @@ const Login = () => {
               <div className="forgot-password">
                 <Link to="/forgot-password">Quên mật khẩu?</Link>
               </div>
-              {error && <p className="error-text">{error}</p>}
+              {/* {error && <p className="error-text">{error}</p>} */}
               <button type="submit" className="login-button" disabled={loading}>
                 {loading ? 'Đang đăng nhập...' : 'Đăng Nhập'}
               </button>

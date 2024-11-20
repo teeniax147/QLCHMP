@@ -18,7 +18,7 @@ const Register = () => {
   useEffect(() => {
     document.documentElement.classList.add('register-page');
     document.body.classList.add('register-page');
-    
+
     return () => {
       document.documentElement.classList.remove('register-page');
       document.body.classList.remove('register-page');
@@ -125,7 +125,7 @@ const Register = () => {
           <img src="src/assets/Icons/logo1.png" alt="Glamour Cosmic Logo" />
         </div>
         <h2>Đăng Ký Tài Khoản</h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} style={{ width: "100%" }}>
           <div className="input-group">
             <label>Tên Đăng Nhập</label>
             <input
@@ -137,30 +137,27 @@ const Register = () => {
             />
             {errors.username && <p className="error-text">{errors.username}</p>}
           </div>
-
-          <div className="input-group-row">
-            <div className="input-group half-width">
-              <label>Họ</label>
-              <input
-                type="text"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-                required
-                placeholder="Nhập họ của bạn"
-              />
-              {errors.lastName && <p className="error-text">{errors.lastName}</p>}
-            </div>
-            <div className="input-group half-width">
-              <label>Tên</label>
-              <input
-                type="text"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                required
-                placeholder="Nhập tên của bạn"
-              />
-              {errors.firstName && <p className="error-text">{errors.firstName}</p>}
-            </div>
+          <div className="input-group">
+            <label>Họ</label>
+            <input
+              type="text"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              required
+              placeholder="Nhập họ của bạn"
+            />
+            {errors.lastName && <p className="error-text">{errors.lastName}</p>}
+          </div>
+          <div className="input-group">
+            <label>Tên</label>
+            <input
+              type="text"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              required
+              placeholder="Nhập tên của bạn"
+            />
+            {errors.firstName && <p className="error-text">{errors.firstName}</p>}
           </div>
 
           <div className="input-group">
@@ -212,7 +209,7 @@ const Register = () => {
           </div>
 
           <button type="submit" className="register-button">
-            Đăng Ký Mau Lẹ 
+            Đăng Ký Mau Lẹ
           </button>
         </form>
         <p>Đã có tài khoản? <Link to="/login">Đăng nhập</Link></p>

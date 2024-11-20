@@ -75,7 +75,7 @@ const OrderList = () => {
             Authorization: `Bearer ${token}`,
           },
         }
-      );
+      );  
       setOrders(response.data.$values || []);
     } catch (err) {
       console.error("Error fetching orders:", err.response?.data || err.message);
@@ -180,7 +180,7 @@ const OrderList = () => {
   }, []);
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "20px", marginTop: "80px" }}>
       <Typography variant="h4" align="center" gutterBottom>
         Danh sách đơn hàng
       </Typography>
@@ -192,7 +192,7 @@ const OrderList = () => {
         centered
         indicatorColor="primary"
         textColor="primary"
-        style={{ marginBottom: "20px" }}
+        style={{ marginBottom: "20px"}}
       >
         {tabLabels.map((label, index) => (
           <Tab key={index} label={label} />

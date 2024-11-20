@@ -4,7 +4,8 @@
   display: flex;
   flex-direction: column;
   overflow: hidden; /* Ẩn thanh cuộn toàn màn hình */
-  margin-top: -76px; /* Loại bỏ khoảng trống không cần thiết */
+  /* margin-top: -76px; */
+   /* Loại bỏ khoảng trống không cần thiết */
 }
 
 /* Khu vực chứa bảng sản phẩm */

@@ -78,9 +78,9 @@ const CartPage = () => {
     }
   };
 
-  if (loading) return <p>Đang tải giỏ hàng...</p>;
+  if (loading) return <p style={{marginTop: "100px"}}>Đang tải giỏ hàng...</p>;
   if (error) return <p>{error}</p>;
-  if (cartItems.length === 0) return <p>Giỏ hàng của bạn đang trống.</p>;
+  if (cartItems.length === 0) return <p style={{marginTop: "100px"}}>Giỏ hàng của bạn đang trống.</p>;
 
   return (
     <div className="cart-container">

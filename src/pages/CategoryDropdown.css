@@ -14,13 +14,14 @@
     font-weight: bold;
     outline: none !important;
     box-shadow: none !important;
+    background: transparent !important;
     font-size: 15px;
     font-family: 'Inter', sans-serif;
     transition: color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
 }
 .dropdown-button:hover, 
 .dropdown-button:active {
-  color: #3e7e3e; /* Màu đậm hơn khi di chuột và chạm vào */
+  color: #3e7e3e !important; /* Màu đậm hơn khi di chuột và chạm vào */
 }
 
 .dropdown-content {

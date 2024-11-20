@@ -73,9 +73,9 @@ const Layout = () => {
         </div>
 
         <div className="header-main">
-          <div className="logoheader">
+          <Link to="/" className="logoheader">
             <img src="src/assets/Logo.png" alt="Glamour Cosmic Logo" />
-          </div>
+          </Link>
 
           <div className="search-bar">
             <input type="text" placeholder="FREESHIP MỌI ĐƠN" />
@@ -88,7 +88,7 @@ const Layout = () => {
 
           <div className="header-icons">
           <span className="icon">
-  <Link to="/beauty-blog">
+  <Link to="/beauty-blog" className='link-blog'>
     <img src="src/assets/Icons/blog.png" alt="Blog Icon" />
     Blog làm đẹp
   </Link>

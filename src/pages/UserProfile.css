@@ -6,6 +6,7 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  margin-top: 100px;
 }
 
 .user-profile-container h2 {
@@ -34,6 +35,10 @@
   flex-direction: column;
   gap: 25px; /* Tăng khoảng cách giữa các hàng */
   margin-top: 20px;
+}
+
+.user-input-section .user-row input{
+  padding-left: 7px;
 }
 
 .user-row {

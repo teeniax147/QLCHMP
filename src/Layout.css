@@ -481,3 +481,8 @@ a, a:visited, a:hover, a:focus, a:active {
   display: flex;
   align-items: center;
 }
+
+/* -------- */
+.link-blog:hover{
+color: #333;
+}

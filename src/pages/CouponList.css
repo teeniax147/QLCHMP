@@ -1,0 +1,136 @@
+
+.coupon-list h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #0a6727;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.coupon-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+
+.coupon-list {
+  padding: 20px;
+  max-width: 800px;
+  margin: -100px auto 50px;
+  text-align: center;
+}
+.coupon-card {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  align-items: stretch;
+}
+
+.coupon-left {
+  background-color: #28a745; /* Màu nền xanh lá */
+  color: white;
+  width: 120px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.coupon-right {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.quantity-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #1da734; /* Màu nền hồng nhạt */
+  color: #ffffff; /* Màu chữ đỏ */
+  font-size: 14px;
+  padding: 3px 8px;
+  border-radius: 15px;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Tạo hiệu ứng nổi */
+}
+
+
+.coupon-code{
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+}
+.logo4{
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+}
+.coupon-right {
+  padding: 10px;
+  flex-grow: 1;
+}
+
+.coupon-discount {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.min-order {
+  color: #555;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.live-only {
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+  background-color: #ffecec;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+.expiry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #777;
+  margin-top: 10px;
+}
+
+.use-later {
+  background-color: white;
+  color: red;
+  border: 1px solid red;
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.use-later:hover {
+  background-color: red;
+  color: white;
+}

@@ -1,72 +1,53 @@
-/* Đảm bảo không có margin hoặc padding trên body và html chỉ trong trang đăng nhập */
-.login-wrapper {
+/* Đảm bảo không có margin hoặc padding trên body và html chỉ trong trang đăng ký */
+.register-wrapper {
     margin: 0;
     padding: 0;
     width: 100vw;
-    min-height: 100%; /* Chiều cao tối thiểu bằng với chiều cao của cửa sổ */
+    min-height: 220vh; /* Sử dụng min-height để đảm bảo không có khoảng trắng */
     background-color: #d3f8d3;
     display: flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.login-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* flex-grow: 1; */
-    height: 100%;
-    width: 100%;
-}
-
-.login-form {
-    background-color: #fff;
-    padding: 50px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    max-width: 400px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch; /* Căn đều các phần tử con theo chiều rộng */
-    justify-content: center;
 }
 
 .logo img {
-    width: 110px;
+    width: 140px;
     height: auto;
     display: block;
     margin: 0 auto;
+  }
+
+.register-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150%;
+    width: 100%;
+}
+
+.register-form {
+    background-color: #fff;
+    padding: 60px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 480px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 35px;
     color: #333;
 }
 
 .input-group {
     margin-bottom: 20px;
-    width: 100%;
-}
-
-.input-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: #333;
-    text-align: left; /* Giữ nhãn căn trái */
-}
-
-.input-group input {
-    width: 80%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 14px;
+    width: 100%; /* Chiều rộng đầy đủ */
 }
 
 .input-group-row {
@@ -75,12 +56,33 @@ h2 {
     gap: 50px; /* Tạo khoảng cách đều giữa hai trường */
     width: 100%;
 }
+
+.half-width {
+    width: 50%; /* Điều chỉnh chiều rộng để không quá sát nhau */
+}
+
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
 .input-group input:focus {
     outline: none;
     border-color: #3e7e3e;
 }
 
-.login-button {
+.register-button {
     width: 100%;
     padding: 12px;
     background-color: #3e7e3e;
@@ -91,23 +93,8 @@ h2 {
     cursor: pointer;
 }
 
-.login-button:hover {
+.register-button:hover {
     background-color: #2e5e2e;
-}
-
-/* Căn phải cho liên kết Quên mật khẩu */
-.forgot-password {
-    text-align: right;
-    margin-bottom: 15px;
-}
-
-.forgot-password a {
-    color: #3e7e3e;
-    text-decoration: none;
-}
-
-.forgot-password a:hover {
-    text-decoration: underline;
 }
 
 p {

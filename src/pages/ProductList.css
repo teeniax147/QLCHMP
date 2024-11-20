@@ -1,0 +1,233 @@
+/* Container chính của trang sản phẩm */
+.product-container-custom {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.product-header-banner-custom img {
+  width: 100%;
+  height: 325px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  margin-top: -90px;
+}
+
+.product-title-custom {
+  text-align: left;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Bố cục chính: Filters + Grid sản phẩm */
+.product-content-custom {
+  display: flex;
+  gap: 20px;
+}
+
+/* Sidebar bộ lọc */
+.product-filters-custom {
+  width: 250px;
+  margin-left: -60px;
+}
+
+.product-filter-section-custom {
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.product-filter-title-custom {
+  font-size: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.product-filter-list-custom {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.product-filter-list-custom li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+/* Grid sản phẩm */
+.product-grid-custom {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Thẻ sản phẩm */
+.product-card-custom {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out; /* Thêm hiệu ứng chuyển đổi */
+  text-align: center;
+  margin: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card-custom:hover {
+  transform: scale(1.03); /* Tăng kích thước khi hover */
+}
+
+.product-image-custom {
+  width: auto;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 10px; /* Khoảng cách giữa hình và tên sản phẩm */
+  margin-top: 12px;
+}
+
+.product-card-custom:hover .product-image-custom {
+  transform: scale(1.0); /* Tăng kích thước hình ảnh khi hover */
+}
+
+/* Thông tin sản phẩm */
+.product-details-custom {
+  padding: 10px;
+}
+
+.product-name-custom {
+  font-size: 16px;
+  color: #333;
+  margin: -6px 0;
+  white-space: normal; /* Để văn bản có thể xuống dòng nếu cần */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Hiển thị tối đa 2 dòng */
+  -webkit-box-orient: vertical;
+}
+
+/* Thương hiệu được đặt dưới hình ảnh */
+.product-brand-custom {
+  font-size: 16px;
+  color: #666;
+  margin-top: 8px;
+}
+
+.product-price-custom {
+  font-size: 18px;
+  color: #12853e;
+  font-weight: bold;
+  margin-top: 12px;
+  display: flex;
+  justify-content: center; /* Căn giữa nội dung */
+  width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng */
+}
+
+/* Phần hiển thị khuyến mãi nếu có */
+.promotion-badge-custom {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #28ad39;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Các nút yêu thích */
+.favorite-button-custom,
+.favorited-custom {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  margin-top: 10px;
+}
+
+.favorited-custom {
+  color: red;
+}
+
+.favorite-button-custom:hover,
+.favorited-custom:hover {
+  color: #ff6b6b;
+}
+
+/* Phân trang */
+.pagination-custom {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page-button-custom {
+  padding: 8px 12px;
+  margin: 0 5px;
+  border: none;
+  background-color: #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.page-button-custom.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.page-button-custom:hover {
+  background-color: #aaa;
+}
+.product-original-price {
+  text-decoration: line-through;
+  color: #888;
+  margin-left: 8px;
+  font-size: 0.9em;
+}
+
+.product-shock-price {
+  color: red;
+  font-weight: bold;
+}
+
+.product-categories-custom {
+  color: #007bff;
+  font-size: 0.9em;
+}
+
+.product-rating-custom {
+  color: #f39c12;
+  font-size: 0.9em;
+}
+.favorite-icon {
+  position: absolute;
+  top: -2px;
+  right: 9px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #aaa;
+  transition: color 0.3s ease;
+  z-index: 10; /* Đảm bảo hiển thị trên các thành phần khác */
+}
+
+.favorite-icon:hover {
+  color: red;
+}

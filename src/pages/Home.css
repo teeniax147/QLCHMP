@@ -4,6 +4,7 @@
   margin: -60px auto;
   position: relative;
   overflow: hidden;
+  margin-top: 100px;
 }
 
 .carousel-slide {
@@ -153,6 +154,7 @@
   max-width: 90%; /* Ensures the image is responsive and fits the container */
   height: 600px; /* Maintains the aspect ratio */
   margin-top: 35px;
+  object-fit: cover;
 }
 .brand-section-title {
   text-align: center; /* Căn giữa tiêu đề */
